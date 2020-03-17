@@ -11,7 +11,7 @@
     <groupId>antihype</groupId>
     <artifactId>carsharings</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Car Sharings</name>
+    <name>CarSharings</name>
     <description>Server for car sharing</description>
 
     <properties>
