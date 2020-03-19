@@ -1,7 +1,7 @@
 package antihype.carsharings.controllers;
 
-import antihype.carsharings.services.UserService;
 import antihype.carsharings.domain.User;
+import antihype.carsharings.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,3 +19,4 @@ public class UserController {
         return service.getAllUsers();
     }
 }
+
