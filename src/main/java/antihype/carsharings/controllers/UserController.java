@@ -11,8 +11,12 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    @Autowired
     private UserService service;
+
+    @Autowired
+    public void setService(UserService service) {
+        this.service = service;
+    }
 
     @GetMapping("/users")
     public List<User> getAllUsers() {

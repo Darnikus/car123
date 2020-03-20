@@ -10,10 +10,22 @@ import java.util.List;
 @Service
 public class UserService {
 
-    @Autowired
     private UserRepository repository;
+
+    @Autowired
+    public void setRepository(UserRepository repository) {
+        this.repository = repository;
+    }
 
     public List<User> getAllUsers() {
         return repository.findAll();
+    }
+
+    public void saveUser(User user) {
+        repository.save(user);
+    }
+
+    public User findByUsername(String username) {
+        return repository.findByUsername(username);
     }
 }
