@@ -15,8 +15,12 @@ import java.util.Collections;
 @Controller
 public class RegistrationController {
 
-    @Autowired
     private UserService service;
+
+    @Autowired
+    public void setService(UserService service) {
+        this.service = service;
+    }
 
     @GetMapping("/registration")
     public String registration(Model model) {
