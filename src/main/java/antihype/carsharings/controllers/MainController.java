@@ -12,13 +12,15 @@ public class MainController {
         return "main";
     }
 
-    @GetMapping("/home")
-    public String home(Model model) {
-        return "home";
-    }
+//    @GetMapping("/home")
+//    public String home(Model model) {
+//        return "home";
+//    }
 
     @GetMapping("/login")
     public String login(Model model) {
         return "login";
     }
+
+
 }
