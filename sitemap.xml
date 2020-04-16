@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns="">
+
+    <!--Начальная страница-->
+    <url>
+        <loc>http://localhost:8080/</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>1</priority>
+    </url>
+
+    <!--Логин-->
+    <url>
+        <loc>http://localhost:8080/login</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>1</priority>
+    </url>
+
+    <!--Регистрация-->
+    <url>
+        <loc>http://localhost:8080/register</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>1</priority>
+    </url>
+
+    <!--Домашняя страница после авторизации-->
+    <url>
+        <loc>http://localhost:8080/home</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>1</priority>
+    </url>
+
+    <!--Профиль-->
+    <url>
+        <loc>http://localhost:8080/account/profile</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>1</priority>
+
+    </url>
+
+    <!--Страница с объявлениями пользователя-->
+    <url>
+        <loc>http://localhost:8080/account/ads</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>1</priority>
+    </url>
+
+
+    <!--Создание объявления-->
+    <url>
+        <loc>http://localhost:8080/account/ads/create</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>1</priority>
+    </url>
+
+    <!--Изменение объявления-->
+    <url>
+        <loc>http://localhost:8080/account/ads/change</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>1</priority>
+    </url>
+
+    <!--Редактрирование аккаунта-->
+    <url>
+        <loc>http://localhost:8080/account/edit</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>0.8</priority>
+    </url>
+
+    <!--Заказы пользователя-->
+    <url>
+        <loc>http://localhost:8080/account/user-orders</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <!--Избранные машины-->
+    <url>
+        <loc>http://localhost:8080/account/my-favorites</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>0.5</priority>
+    </url>
+
+    <!--Отзывы других пользователей-->
+    <url>
+        <loc>http://localhost:8080/account/user-feedback</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>0.5</priority>
+    </url>
+
+    <!--Счета.Рейтигш 0.1 предпологает, что на эту часть можно забить х*й-->
+    <url>
+        <loc>http://localhost:8080/account/accounts</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>0.1</priority>
+    </url>
+
+    <!--О нас. Размещается в footer каждой страницы-->
+    <url>
+        <loc>http://localhost:8080/about-us</loc>
+        <lastmod>2020-04-16</lastmod>
+        <priority>0.1</priority>
+    </url>
+</urlset>

@@ -3,37 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <link rel="stylesheet" href="style.css">
-пример подключения ксс чтоб дебил-разработкич не забыл-->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="useredit.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
     <nav th:replace="parts/navbar :: header"></nav>
-    <h1>home</h1>
-    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 
+    <h1>User Edit</h1>
 
-    <div>
-        <form th:action="@{/home}" th:object="${carAdverts}" method="post">
-            <input type="text" name="text" placeholder="advert" />
-            <button type="submit">Add</button>
-        </form>
-    </div>
+    <form action="/user" method="post">
+        <p class="name">Username</p>
+        <input type="text" th:value="${user.getUsername()}" name="username">
+<!--        <br>-->
+<!--        <p class="name">Email</p>-->
+<!--        <input type="email" name="email">-->
+<!--        <br>-->
+<!--        <p class="name">Password</p>-->
+<!--        <input type="password" name="password">-->
+<!--        <br>-->
+<!--        <p class="name">Confirm Password</p>-->
+<!--        <input type="password" name="confirm_password">-->
 
-    <table>
-        <tr>
-            <th>id</th>
-            <th>text</th>
-        </tr>
-        <tr th:each="c : ${carAdverts}">
-            <td th:text="${c.id}"><p th:value="${c.id}"></p></td>
-            <td th:text="${c.text}"></td>
-        </tr>
-    </table>
+        <input type="text" th:value="${user.id}" name="userId">
+        <br>
+
+        <button type="submit">Update User</button>
+    </form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
