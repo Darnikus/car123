@@ -13,7 +13,7 @@
 
     <h1>User Edit</h1>
 
-    <form action="/user" method="post">
+    <form th:action="@{/user/{id}(id=${user.id})}" method="post">
         <p class="name">Username</p>
         <input type="text" th:value="${user.getUsername()}" name="username">
 <!--        <br>-->
@@ -26,8 +26,7 @@
 <!--        <p class="name">Confirm Password</p>-->
 <!--        <input type="password" name="confirm_password">-->
 
-        <input type="text" th:value="${user.id}" name="userId">
-        <br>
+        <input type="hidden" th:value="${user.id}" name="userId">
 
         <button type="submit">Update User</button>
     </form>

@@ -1,9 +1,6 @@
 package antihype.carsharings.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class CarAdvert {
@@ -13,12 +10,18 @@ public class CarAdvert {
 
     private String text;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User author;
+
     public CarAdvert() {
     }
 
-    public CarAdvert(String text) {
+    public CarAdvert(String text, User author) {
         this.text = text;
+        this.author = author;
     }
+
 
     public Long getId() {
         return id;
@@ -34,5 +37,13 @@ public class CarAdvert {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
     }
 }
