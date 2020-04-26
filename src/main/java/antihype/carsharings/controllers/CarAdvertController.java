@@ -26,14 +26,14 @@ public class CarAdvertController {
         return "home";
     }
 
-    @PostMapping("/home")
-    public String addCarAdvert(
-            @AuthenticationPrincipal User user,
-            @RequestParam String text, Model model) {
-        CarAdvert carAdvert = new CarAdvert(text, user);
-        service.saveCarAdvert(carAdvert);
-        return "redirect:/home";
-    }
+//    @PostMapping("/home")
+//    public String addCarAdvert(
+//            @AuthenticationPrincipal User user,
+//            @RequestParam String text, Model model) {
+//        CarAdvert carAdvert = new CarAdvert(text, user);
+//        service.saveCarAdvert(carAdvert);
+//        return "redirect:/home";
+//    }
 
     @Autowired
     public void setService(CarAdvertService service) {

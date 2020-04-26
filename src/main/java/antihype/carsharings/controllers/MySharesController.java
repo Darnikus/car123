@@ -8,6 +8,8 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,11 +23,18 @@ public class MySharesController {
     public String getPage(
             @AuthenticationPrincipal User user,
             Model model) {
-//        List<CarAdvert> allCarAdverts = service.getAllCarAdverts().stream().filter(u -> u.getAuthor().equals(user)).collect(Collectors.toList());
-
         List<CarAdvert> carAdvertsByAuthor = service.getCarAdvertsByAuthor(user);
         model.addAttribute("carAdverts", carAdvertsByAuthor);
         return "myshares";
+    }
+
+    @PostMapping("/myshares")
+    public String addCarAdvert(
+            @AuthenticationPrincipal User user,
+            @RequestParam String text, Model model) {
+        CarAdvert carAdvert = new CarAdvert(text, user);
+        service.saveCarAdvert(carAdvert);
+        return "redirect:/myshares";
     }
 
 

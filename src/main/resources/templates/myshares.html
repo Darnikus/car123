@@ -10,6 +10,16 @@
 <body>
     <nav th:replace="parts/navbar :: header"></nav>
 
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Создать объявление
+        </button>
+        <form class="dropdown-menu" aria-labelledby="dropdownMenuButton" th:action="@{/myshares}" th:object="${carAdverts}" method="post">
+            <input type="text" name="text" placeholder="advert" />
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
     <table>
         <tr>
             <th>id</th>
@@ -22,6 +32,8 @@
             <td th:text="${c.author.getUsername()}"></td>
         </tr>
     </table>
+
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
