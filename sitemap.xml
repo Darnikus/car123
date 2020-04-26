@@ -41,7 +41,7 @@
 
     <!--Страница с объявлениями пользователя-->
     <url>
-        <loc>http://localhost:8080/account/ads</loc>
+        <loc>http://localhost:8080/myshares</loc>
         <lastmod>2020-04-16</lastmod>
         <priority>1</priority>
     </url>
@@ -70,7 +70,7 @@
 
     <!--Заказы пользователя-->
     <url>
-        <loc>http://localhost:8080/account/user-orders</loc>
+        <loc>http://localhost:8080/myorders</loc>
         <lastmod>2020-04-16</lastmod>
         <priority>0.7</priority>
     </url>

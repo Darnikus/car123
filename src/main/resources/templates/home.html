@@ -28,11 +28,12 @@
         <tr>
             <th>id</th>
             <th>text</th>
+            <th>author</th>
         </tr>
         <tr th:each="c : ${carAdverts}">
             <td th:text="${c.id}"><p th:value="${c.id}"></p></td>
             <td th:text="${c.text}"></td>
-            <td th:text="${c.author}"></td>
+            <td th:text="${c.author.getUsername()}"></td>
         </tr>
     </table>
 
