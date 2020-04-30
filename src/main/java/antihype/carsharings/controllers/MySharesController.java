@@ -28,7 +28,12 @@ public class MySharesController {
         return "myshares";
     }
 
-    @PostMapping("/myshares")
+    @GetMapping("/myshares/add")
+    public String getAddPage(Model model) {
+        return "advertadd";
+    }
+
+    @PostMapping("/myshares/add")
     public String addCarAdvert(
             @AuthenticationPrincipal User user,
             @RequestParam String text, Model model) {
@@ -37,6 +42,17 @@ public class MySharesController {
         return "redirect:/myshares";
     }
 
+    @PostMapping("filter")
+    public String filter(@RequestParam String filter, Model model) {
+        List<CarAdvert> carAdverts;
+        if(filter != null && !filter.isEmpty()){
+            carAdverts = service.getCarAdvertsByText(filter);
+        } else {
+            carAdverts = service.getAllCarAdverts();
+        }
+        model.addAttribute("carAdverts", carAdverts);
+        return "myshares";
+    }
 
     @Autowired
     public void setService(CarAdvertService service) {

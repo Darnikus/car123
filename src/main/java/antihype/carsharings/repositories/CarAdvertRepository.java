@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface CarAdvertRepository extends JpaRepository<CarAdvert, Long> {
     List<CarAdvert> findByAuthor(User author);
+    List<CarAdvert> findByText(String text);
 }

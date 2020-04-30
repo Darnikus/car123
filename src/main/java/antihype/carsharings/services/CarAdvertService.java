@@ -24,6 +24,8 @@ public class CarAdvertService {
         return repository.findByAuthor(author);
     }
 
+    public List<CarAdvert> getCarAdvertsByText(String text) { return repository.findByText(text); }
+
     @Autowired
     public void setRepository(CarAdvertRepository repository) {
         this.repository = repository;

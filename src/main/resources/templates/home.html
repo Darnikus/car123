@@ -5,6 +5,12 @@
     <title>Title</title>
 <!--    <link rel="stylesheet" href="style.css">
 пример подключения ксс чтоб дебил-разработкич не забыл-->
+    <style>
+        .a {
+            height: 250px;
+            width: 1100px;
+        }
+    </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -17,12 +23,12 @@
     <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 
 
-    <div>
-        <form th:action="@{/home}" th:object="${carAdverts}" method="post">
-            <input type="text" name="text" placeholder="advert" />
-            <button type="submit">Add</button>
-        </form>
-    </div>
+<!--    <div>-->
+<!--        <form th:action="@{/home}" th:object="${carAdverts}" method="post">-->
+<!--            <input type="text" name="text" placeholder="advert" />-->
+<!--            <button type="submit">Add</button>-->
+<!--        </form>-->
+<!--    </div>-->
 
     <table>
         <tr>
@@ -36,6 +42,17 @@
             <td th:text="${c.author.getUsername()}"></td>
         </tr>
     </table>
+
+    <div class="card a" style="margin: auto"  th:each="c : ${carAdverts}">
+        <div class="card-body">
+            <p th:text="${c.id}"></p>
+            <p th:text="${c.text}"></p>
+            <p th:text="${c.author.getUsername()}"></p>
+        </div>
+        <div class="card-img-overlay"></div>
+    </div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
