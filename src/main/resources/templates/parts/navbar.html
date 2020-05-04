@@ -14,7 +14,7 @@
                 <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item dropdown" style="position: absolute; right: 150px"> <!--Тут надо разобраться с позицрованием, сделать автоматом -->
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" th:href="@{#}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     [[${#httpServletRequest.remoteUser}]]
                 </a>
                 <div class="dropdown-menu"  aria-labelledby="navbarDropdown">

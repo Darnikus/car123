@@ -13,7 +13,7 @@
 
     <h1>User Edit</h1>
 
-    <form th:action="@{/user/{id}(id=${user.id})}" method="post">
+    <form th:action="@{/account/edit}" method="post">
         <p class="name">Username</p>
         <input type="text" th:value="${user.getUsername()}" name="username">
 <!--        <br>-->

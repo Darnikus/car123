@@ -9,11 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import java.util.Optional;
-
 @Controller
-@RequestMapping(value = "user")
+@RequestMapping(value = "account")
 public class UserEditController {
     private UserService service;
     private UserRepository repository;
@@ -23,36 +20,45 @@ public class UserEditController {
         this.service = service;
     }
 
-    @Autowired
-    public void setRepository(UserRepository repository) {
-        this.repository = repository;
-    }
-
-    @GetMapping("{user}")
+    @GetMapping("/edit")
     public String userEditForm(@AuthenticationPrincipal User user, Model model) {
         model.addAttribute("user", user);
         return "useredit";
     }
 
 
-
-    @PostMapping("{user}")
+    @PostMapping("/edit")
     public String userUpdate(
             @RequestParam String username,
-            @PathVariable("id") Long id,
-            @Valid User user,
+            @AuthenticationPrincipal User user,
             Model model
     ) {
-//        Optional<User> user = repository.findById(id);
-////        user.get().setUsername(username);
-//        User present = user.get();
-//        User user = repository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid"));
-
-
         user.setUsername(username);
-
         service.saveUser(user);
+        return "redirect:/account";
+    }
 
-        return "redirect:/home";
+    @GetMapping("/password_edit")
+    public String passwordEditForm(@AuthenticationPrincipal User user, Model model) {
+        model.addAttribute("user", user);
+        return "password_edit";
+    }
+
+    // it's not working
+    @PostMapping("/password_edit")
+    public String passwordUpdate(
+            @RequestParam("password") String password,
+            @RequestParam("confirmPassword") String confirmPassword,
+            @AuthenticationPrincipal User user,
+            Model model
+    ) {
+
+        if(password.equals(confirmPassword)) {
+            user.setPassword(password);
+            return "redirect:/logout";
+        } else {
+            model.addAttribute("error", "error");
+            return "password_edit";
+        }
     }
 }

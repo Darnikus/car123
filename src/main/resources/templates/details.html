@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <nav th:replace="parts/navbar :: header"></nav>
+<nav th:replace="parts/navbar :: header"></nav>
 
-    <div>
-        <p>Nickname</p>
-        <p style="margin: 20px" th:text="${user.username}"></p>
-        <a href="/account/edit">Change username</a>
-        <a href="/account/password_edit">Change password</a>
+    <div class="card a" style="margin: auto">
+        <div class="card-body">
+            <p th:text="${carAdvert.id}"></p>
+            <p th:text="${carAdvert.text}"></p>
+            <p th:text="${carAdvert.author.getUsername()}"></p>
+        </div>
+        <div class="card-img-overlay"></div>
     </div>
 
 <!-- Optional JavaScript -->
