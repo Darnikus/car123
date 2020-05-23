@@ -26,22 +26,47 @@
         </div>
     </div>
 
-    <table>
-        <tr>
-            <th>id</th>
-            <th>text</th>
-            <th>author</th>
-        </tr>
-        <tr th:each="c : ${carAdverts}">
-            <td th:text="${c.id}"><p th:value="${c.id}"></p></td>
-            <td th:text="${c.text}"></td>
-            <td th:text="${c.author.getUsername()}"></td>
-        </tr>
-    </table>
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>id</th>-->
+<!--            <th>text</th>-->
+<!--            <th>author</th>-->
+<!--        </tr>-->
+<!--        <tr th:each="c : ${carAdverts}">-->
+<!--            <td th:text="${c.id}"><p th:value="${c.id}"></p></td>-->
+<!--            <td th:text="${c.text}"></td>-->
+<!--            <td th:text="${c.author.getUsername()}"></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+    <div style="margin: auto">
+        <div class="card" style="height: 250px;
+                width: 1100px; margin: auto"   th:each="c : ${carAdverts}">
+            <div class="card-body">
+                <a class="card-link" th:href="@{/order(id=${c.id})}" th:text="${c.id}"></a>
+                <p style="margin-top: 10px" th:text="${c.text}"></p>
+                <p th:text="${c.author.getUsername()}"></p>
+            </div>
+            <div style="margin-left: 1100px; margin-bottom: 200px; margin-top: -20px" class="navbar-toggler-icon">
+                <form th:action="@{/myshares/{id}/delete(id = ${c.id})}" method="post">
+                    <button class="btn">
+                        <img src="images/delete-icon.png" width="20px" height="20px" alt="">
+                    </button>
+                </form>
+                <form th:action="@{/myshares/{id}/edit(id = ${c.id})}" method="get">
+                    <button class="btn">
+                        <img style="margin-top: 10px" src="images/edit-icon.png" alt="" width="20px" height="20px">
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
 
 
 
-<!-- Optional JavaScript -->
+
+    <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

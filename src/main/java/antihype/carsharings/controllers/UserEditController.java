@@ -26,7 +26,6 @@ public class UserEditController {
         return "useredit";
     }
 
-
     @PostMapping("/edit")
     public String userUpdate(
             @RequestParam String username,

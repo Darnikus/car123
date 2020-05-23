@@ -29,6 +29,8 @@ public class CarAdvertService {
 
     public Optional<CarAdvert> getCarAdvertById(Long id) { return repository.findById(id); }
 
+    public void deleteCarAdvert(CarAdvert carAdvert) { repository.delete(carAdvert); }
+
     @Autowired
     public void setRepository(CarAdvertRepository repository) {
         this.repository = repository;
