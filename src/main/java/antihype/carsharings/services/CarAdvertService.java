@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class CarAdvertService {
@@ -30,6 +31,8 @@ public class CarAdvertService {
     public Optional<CarAdvert> getCarAdvertById(Long id) { return repository.findById(id); }
 
     public void deleteCarAdvert(CarAdvert carAdvert) { repository.delete(carAdvert); }
+
+    public Set<CarAdvert> getCarAdvertsByRenter(User user) { return repository.findByRenters(user); }
 
     @Autowired
     public void setRepository(CarAdvertRepository repository) {

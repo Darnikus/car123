@@ -10,7 +10,17 @@
 <body>
     <nav th:replace="parts/navbar :: header"></nav>
 
+    <div style="margin: auto">
+        <div class="card" style="height: 250px;
+                width: 1100px; margin: auto"   th:each="c : ${carAdverts}">
+            <div class="card-body">
+                <a class="card-link" th:href="@{/order(id=${c.id})}" th:text="${c.id}"></a>
+                <p style="margin-top: 10px" th:text="${c.text}"></p>
+                <p th:text="${c.author.getUsername()}"></p>
+            </div>
+        </div>
 
+    </div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

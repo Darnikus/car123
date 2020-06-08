@@ -45,6 +45,13 @@ public class CarAdvertController {
         return "details";
     }
 
+    @PostMapping(value = "/order", params = "id")
+    public String addRenterToCarAdvert(@RequestParam("id") Long id, @AuthenticationPrincipal User user,Model model) {
+        CarAdvert carAdvert = service.getCarAdvertById(id).orElseThrow(() -> new EntityNotFoundException(id.toString()));
+        carAdvert.addRenter(user);
+        return "redirect:/myorders";
+    }
+
     @Autowired
     public void setService(CarAdvertService service) {
         this.service = service;

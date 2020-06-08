@@ -10,13 +10,17 @@
 <body>
 <nav th:replace="parts/navbar :: header"></nav>
 
-    <div class="card a" style="margin: auto">
+    <div class="card a" style="">
+        <div style="margin-left: 1500px; padding-top: -10px; text-align: revert; position: absolute" class="btn">
+            <form th:action="@{/order(id = ${carAdvert.id})}" method="post">
+                <button type="submit">Order</button>
+            </form>
+        </div>
         <div class="card-body">
             <p th:text="${carAdvert.id}"></p>
             <p th:text="${carAdvert.text}"></p>
             <p th:text="${carAdvert.author.getUsername()}"></p>
         </div>
-        <div class="card-img-overlay"></div>
     </div>
 
 <!-- Optional JavaScript -->
