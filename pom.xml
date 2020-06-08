@@ -15,7 +15,7 @@
     <description>Server for car sharing</description>
 
     <properties>
-        <java.version>13.0.2</java.version>
+        <java.version>13</java.version>
     </properties>
 
     <dependencies>
@@ -139,6 +139,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
             </plugin>
         </plugins>
     </build>
